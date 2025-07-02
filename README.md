@@ -1,25 +1,33 @@
-# SpendSense - Expense Tracker App
+# SpendaliQ- Expense Tracker App
 
-A full-stack expense tracker built with **React (Vite)** and **Firebase (BaaS)**. Allows users to track daily expenses, view monthly summaries, and manage budgets securely with Firebase Auth and Firestore.
+A smart, sleek, and simple expense tracker built with **React + Vite + TailwindCSS**, powered by **Firebase** for backend and authentication. Track your spending, stay on budget, and visualize where your money goes — all in real time.
 
 ---
 
 ##  Features
 
-- 🔐 Firebase Authentication (Sign up / Login / Logout)
-- 📦 Firebase Firestore for storing expenses
-- ➕ Add, view, and delete expenses
-- 📊 Monthly summary and charts (via Chart.js or Recharts)
-- 🔍 Filter by category/date
-- 📱 Mobile responsive UI (Tailwind CSS)
+
+- User Authentication (Sign Up / Login via Firebase Auth)  
+- Add, Edit, Delete Expenses and Incomes  
+- Categorize Transactions (Food, Rent, Travel, etc.)  
+- Real-time Data Sync with Firebase Firestore  
+- Monthly/Weekly Spending Summary  
+- Interactive Charts with Recharts / Chart.js  
+- Budget Planning and Expense Limits  
+- Mobile-Friendly, Responsive Design  
+
+
+
 
 ---
 
 ##  Tech Stack
 
-- **Frontend**: React, Vite, Tailwind CSS
-- **Backend/BaaS**: Firebase (Auth, Firestore, Hosting)
-- **Deployment**: Firebase Hosting
+| Frontend           | Backend / BaaS        | UI / Styling     |
+|--------------------|------------------------|------------------|
+| React + Vite       | Firebase Auth          | TailwindCSS      |
+| React Router DOM   | Firebase Firestore     | Heroicons        |
+| Chart.js / Recharts| Firebase Hosting       | DaisyUI (optional)|
 
 ---
 
@@ -50,6 +58,18 @@ SpendSense/
 └── vite.config.js
 
 ```
+## Environment Variables
+Create a `.env` file in the root directory and add your firebase credentials
+``` env
+VITE_FIREBASE_API_KEY=your_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+
+```
+
 
 ## Setup Instructions
 
@@ -85,9 +105,14 @@ Open in your browser at http://localhost:5173
 ## Deployment
 To deploy to Firebase Hosting:
 ``` bash
-npm run build
+
+# Install Firebase CLI globally
+npm install -g firebase-tools 
+
 firebase login
 firebase init
+
+npm run build
 firebase deploy
 ```
 Make sure to select:
